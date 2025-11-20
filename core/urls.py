@@ -17,8 +17,9 @@ schema_view = get_schema_view(
       default_version='v1',
       description="Fully featured e-commerce backend",
    ),
-   public=True,
-   permission_classes=(permissions.AllowAny,),
+public=True,
+   permission_classes=[AllowAny],   # <= USE LIST NOT TUPLE
+   authentication_classes=[],       # <= CRITICAL FIX
 )
 
 urlpatterns = [
